@@ -59,7 +59,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git osx npm
+  git osx npm zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -94,6 +94,16 @@ DEFAULT_USER="simonhbor"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+
+#
+# ==============
+# ALIASES
+# ==============
+#
+function f() { find . -iname "*$1*" ${@:2} }
+function r() { grep "$1" ${@:2} -R . }
+alias gc='git commit'
+
 #
 # ==============
 # FROM DR BUNSEN
@@ -107,3 +117,7 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
 bindkey '^P' history-search-backward
 bindkey '^N' history-search-forward  
+
+# todo.txt
+source todo_completion
+alias t='~/Dropbox/Apps/dotfiles/todo.sh -d ~/Dropbox/Apps/dotfiles/todo.cfg'
