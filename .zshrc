@@ -7,7 +7,7 @@ export ZSH=/Users/simonhbor/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="theunraveler"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -104,6 +104,7 @@ function f() { find . -iname "*$1*" ${@:2} }
 function r() { grep "$1" ${@:2} -R . }
 alias gc='git commit'
 
+alias icloud="cd /Users/simonhbor/Library/Mobile\ Documents/com~apple~CloudDocs/"
 #
 # ==============
 # FROM DR BUNSEN
@@ -119,5 +120,8 @@ bindkey '^P' history-search-backward
 bindkey '^N' history-search-forward  
 
 # todo.txt
-source todo_completion
-alias t='~/Dropbox/Apps/dotfiles/todo.sh -d ~/Dropbox/Apps/dotfiles/todo.cfg'
+# source todo_completion
+alias t='/usr/local/Cellar/todo-txt/2.11.0/bin/todo.sh -d ~/todo.cfg'
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
